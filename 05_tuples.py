@@ -33,3 +33,4 @@ print(tuple(my_other_tuple))
 del my_other_tuple[2] 
 del my_other_tuple
 # print(my_other_tuple) # NameError: name 'my_other_tuple' is not defined
+
