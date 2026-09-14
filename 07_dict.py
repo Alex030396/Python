@@ -41,3 +41,18 @@ print(my_dict.values())
 
 my_new_dict = my_dict.fromkeys(("Nombre", "Edad"))
 print(my_new_dict)
+my_list = ["Nombre", "Edad"]
+my_new_dict = dict.fromkeys(my_list)
+print(my_new_dict)
+my_new_dict = dict.fromkeys(my_dict)
+print(my_new_dict)
+my_new_dict = dict.fromkeys(my_dict, "Alex")
+print(my_new_dict)
+
+my_values = my_new_dict.values()
+print(type(my_values))
+
+print(my_new_dict.values())
+print(list(my_new_dict))
+print(tuple(my_new_dict))
+print(set(my_new_dict))
