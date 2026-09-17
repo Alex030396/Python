@@ -10,16 +10,16 @@ cada impresion ), sustituyendo los siguientes:
 - Multiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 """
 
-def fizzbuzz ():
-    for index in range(1,101):
-        if index % 3 == 0 and index % 5 == 0:
-            print("FizzBuzz")
-        elif index % 3 == 0:
-            print("Fizz")
-        elif index % 5 == 0:
-            print("Buzz")
-        else:
-            print(index)
+# def fizzbuzz ():
+#     for index in range(1,101):
+#         if index % 3 == 0 and index % 5 == 0:
+#             print("FizzBuzz")
+#         elif index % 3 == 0:
+#             print("Fizz")
+#         elif index % 5 == 0:
+#             print("Buzz")
+#         else:
+#             print(index)
         
 # fizzbuzz()
         
@@ -33,15 +33,15 @@ las letras de otra palabra inicial
 - Dos palabras exactamente iguales no son anagrama
 """        
 
-def is_anagrama (wordOne, wordTwo):
-    if wordOne.lower() == wordTwo.lower():
-        return False
-    return sorted(wordOne.lower()) == sorted(wordTwo.lower())
+# def is_anagrama (wordOne, wordTwo):
+#     if wordOne.lower() == wordTwo.lower():
+#         return False
+#     return sorted(wordOne.lower()) == sorted(wordTwo.lower())
 
-print(is_anagrama("Alex","Lexa"))
-print(is_anagrama("ria","ira"))
-print(is_anagrama("Mesa","Sema"))
-print(is_anagrama("Mesa","mesa"))
+# print(is_anagrama("Alex","Lexa"))
+# print(is_anagrama("ria","ira"))
+# print(is_anagrama("Mesa","Sema"))
+# print(is_anagrama("Mesa","mesa"))
 
 """
 LA SUCESION DE FIBONACCI
@@ -51,14 +51,14 @@ de Fibonacci empezando en 0.
    la que el siguiente siempre es la suma de los dos anteriores.
    0,1,1,2,3,5,8,13
 """
-def fibonacci():
-    numero_first = 0
-    numero_second = 1
-    for index in range(0,51):
-        print(f"{index} : {numero_first}")
-        fibo = numero_first + numero_second
-        numero_first = numero_second
-        numero_second = fibo
+# def fibonacci():
+#     numero_first = 0
+#     numero_second = 1
+#     for index in range(0,51):
+#         print(f"{index} : {numero_first}")
+#         fibo = numero_first + numero_second
+#         numero_first = numero_second
+#         numero_second = fibo
 
 # fibonacci()
   
@@ -77,7 +77,7 @@ def is_prime():
                 if number % index == 0:
                     is_divisible = True
             if not is_divisible:                    
-                print(number)
+                print(f"{number}: primo")
   
 # is_prime()  
 
