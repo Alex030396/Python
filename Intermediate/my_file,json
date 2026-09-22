@@ -1,0 +1,11 @@
+{
+  "name": "Alex",
+  "surname": "Briceno",
+  "Age": 30,
+  "languaje": [
+    "Python",
+    "Dax",
+    "SQL"
+  ],
+  "LinkedIn": "alexbh336"
+}
