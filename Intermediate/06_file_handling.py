@@ -54,7 +54,18 @@ import csv
 
 csv_file = open("Intermediate/my_file.csv", "w+")
 
+csv_write = csv.writer(csv_file)
+csv_write.writerow(["name", "surname","age","languaje"])
+csv_write.writerow(["Alex", "Briceno",30,"Python"])
+csv_write.writerow(["Victoria", "Quesada",29,"UX/AI"])
+
+csv_file = open("Intermediate/my_file.csv", "r+")
+with open("Intermediate/my_file.csv") as my_other_file:
+    for line in my_other_file.readlines():
+        print(line)
+
+print(csv_file)
 # XLSX FILE
-import xlrd
+# import xlrd
 # XML FILE
 import xml
