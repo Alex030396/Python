@@ -58,3 +58,5 @@ pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$"
 print(re.match(pattern, email))
 print(re.findall(pattern, email))
 print(re.search(pattern, email))
+
+
