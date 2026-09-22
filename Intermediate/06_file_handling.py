@@ -30,7 +30,7 @@ text_files.close()
 
 import json
 
-json_file = open("Intermediate/my_file,json", "w+")
+json_file = open("Intermediate/my_file.json", "w+")
 json_test = {
     "name" : "Alex",
     "surname" : "Briceno",
@@ -39,3 +39,22 @@ json_test = {
     "LinkedIn": "alexbh336"}
 
 json.dump(json_test, json_file, indent =2)
+json_file = open("Intermediate/my_file.json", "r")
+
+for line in json_file.readlines():
+    print(line)
+    
+json_dict = json.load(open("Intermediate/my_file.json"))
+print(json_dict)
+print(type(json_dict))
+print(json_dict["name"])
+
+# CSV FILE
+import csv
+
+csv_file = open("Intermediate/my_file.csv", "w+")
+
+# XLSX FILE
+import xlrd
+# XML FILE
+import xml
