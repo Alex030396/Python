@@ -1,8 +1,10 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-app = FastAPI()
+router = APIRouter()
 # uvicorn users:app --reload
+
+
 
 # Entidad User
 class User(BaseModel):
@@ -16,7 +18,7 @@ users_list = [User(id=1,name="Alex",surname="Briceño",url="https://Ale.com",age
              User(id=2,name="Victoria",surname="Quesada",url="https://VictoriaQuesada.com",age=29),
              User(id=3,name="Luis",surname="Briceno",url="https://LuisBriceno.com",age=35)]
 
-@app.get("/usersjson")
+@router.get("/usersjson")
 async def usersjson():
     return [{"name":"Alex","surname":"Briceno","url":"https://AlexBriceno.com", "age":30},
             {"name":"Victoria","surname":"Quesada","url":"https://VictoriaQuesada.com", "age":29},
@@ -24,34 +26,34 @@ async def usersjson():
 
 
 
-# @app.get("/usersclass")
+# @router.get("/usersclass")
 # async def usersclass():
 #     return User(name="Alex",surname="Briceño",url="https://Ale.com",age=30)
 
-@app.get("/users")
+@router.get("/users")
 async def users():
     return users_list
 
 
 # PATH
-@app.get("/users/{id}")
+@router.get("/users/{id}")
 async def user(id: int):
     return search_user(id)
     
 
 # QUERY
-@app.get("/user/")
+@router.get("/user/")
 async def user(id: int):
     return search_user(id)
     
-@app.post("/user/",response_model=User, status_code = 201)
+@router.post("/user/",response_model=User, status_code = 201)
 async def user(user: User):
     if type(search_user(user.id)) == User:
         raise HTTPException(status_code=404, detail="El usuario ya existe")
     users_list.append(user)
     return user
     
-@app.put("/user/")
+@router.put("/user/")
 async def user(user:User):
     found = False
     for index, saved_user in enumerate(users_list):
@@ -61,7 +63,7 @@ async def user(user:User):
     if not found:
         return {"Error":"No se ha actualizado el usuario"}
     
-@app.delete("/user/{id}")
+@router.delete("/user/{id}")
 async def user(id:int):
     found = False
     for index, saved_user in enumerate(users_list):
