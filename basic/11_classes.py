@@ -4,18 +4,25 @@ class MyEmptyPerson:
     pass
 
 print(MyEmptyPerson)
+print("1-----------")
 print(MyEmptyPerson())
+print("2-----------")
 
 class Person:
     def __init__(self,name, surname):
         self.name = name
-        self.surname = surname
+        self.surname1 = surname
 
 my_person = Person("Alex","Briceno")
+print("3-----------")
 print(my_person)
+print("4-----------")
 print(my_person.name)
-print(my_person.surname)
-print(f"{my_person.name} {my_person.surname}")
+print("5-----------")
+print(my_person.surname1)
+print("6-----------")
+print(f"{my_person.name} {my_person.surname1}")
+print("7-----------")
 
 
 class Person1:
